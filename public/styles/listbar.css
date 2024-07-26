@@ -1,0 +1,52 @@
+/*--LISTBAR----------------------------------------------------------*/
+.listbar {
+    background-color: #F5F5F5;
+    font-weight: 500;
+    font-size: larger;
+    border-bottom-left-radius: 20px;
+    font-family: 'Handlee', cursive;
+    
+}
+/*--Google Icones--------------*/
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+.icon-pos1{
+    padding: 0 5px 3px 5px;
+    font-size: 1.7rem;
+}
+
+/*--List-----------------------*/
+.list {
+    color: #364F6B;
+    cursor: pointer;
+    height : 4rem;
+    border-radius: 0px 0px 10px 10px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+.list:hover {
+    background-color: #f9e0e0;
+    color: #254467;
+    box-shadow: 0px 1px 7px #5b011c50;
+}
+
+.selected-list {
+    background-color: #FC5185;
+    color: #F5F5F5;
+}
+.selected-list:hover {
+    background-color: #f73771;
+    box-shadow: 0px 1px 7px #5b011c50;
+    color: #F5F5F5;
+}
+
+.list-name {
+    font-size: 1.3rem;
+}

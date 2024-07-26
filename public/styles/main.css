@@ -1,0 +1,81 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;    
+    
+    /*
+    ->Fonts
+    main font:  'Dosis', sans-serif;
+    hand writing:  'Handlee', cursive;
+    icones: "Font Awesome 6 Free";
+
+    ->COLORS
+    pink: #FC5185
+    white: #F5F5F5    
+    light blue:  #3FC1C9
+    blue : #364F6B
+    blue:hover : #254467
+    */
+}
+.container {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    grid-template-columns: 0.5fr 1fr 2fr 0.5fr;
+    grid-template-rows: 10vh 85vh 5vh;
+    box-shadow: 0px 6px 20px #364F6B;
+    background-color: #364F6B;
+    /*dotted backgorund*/
+    background-image: radial-gradient(#5d748f 0.5px, #364F6B 0.5px);
+    background-size: 20px 20px;
+}
+
+/*--EMPTY SPACE-------------------------------------------------------*/
+.empty-space {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*--CONTACT-----------------------------------------------------------*/
+.contact {
+    align-self: flex-end;
+    display: inline-flex;
+    flex-direction: column;
+    background-color: #F5F5F5;
+    width: 4rem;
+    padding: 10px 5px 10px 10px;
+    border-radius: 20px 0 0px 20px;
+}
+.contact-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #364F6B;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;;
+    margin: 5px;
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: #F5F5F5;
+}
+.contact-item:hover {
+    cursor: pointer;
+    font-size: 1.9rem;
+    background-color: #254467;
+    box-shadow: 0 1px 4px 0 #364F6B;
+    color: #FC5185;
+    border: 1px solid;
+}
+
+/*--FOOTER-----------------------------------------------------------*/
+.copyright {
+    grid-column: span 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 100;
+    color: #F5F5F598;
+    background-color: #364F6B;
+}

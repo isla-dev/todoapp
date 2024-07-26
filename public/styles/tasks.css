@@ -1,0 +1,163 @@
+/*--TASKS--///////////////////////////////////////////////////////////////*/
+.tasks {
+    display: flex;
+    flex-direction: column;
+    background-color: #3FC1C9;
+    padding: 0 2rem;
+    border-top-right-radius: 20px;
+    font-size: 'Handlee', cursive;
+}
+
+/*--Header---------------------*/
+.tasks-header{
+    height: 25%;
+    font-family: 'Dosis', sans-serif;
+    color: #F5F5F5;
+    text-shadow: 1px 2px 5px #364F6B70;
+}
+.today {
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+    font-size: 2.5rem;
+}
+.date {
+    font-weight: 400;
+    margin: 0;
+    margin-left: 2px;
+}
+.picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+img {
+    width: 14rem;
+    margin-top: 0;
+}
+.advice {
+    margin: 2px;
+    color: #F5F5F5;
+    font-weight: 400;
+    font-size: large;
+}
+.invisible {
+    display: none;
+}
+
+
+/*--TASKS---------------------*/
+.list-of-tasks{
+    height: 62%;
+    overflow-x:hidden;
+    overflow-y: auto;
+    font-family: 'Handlee', cursive;
+}
+    .list-of-tasks::-webkit-scrollbar{
+        width: 10px;
+    }
+    /* Handle */
+    .list-of-tasks::-webkit-scrollbar-thumb {
+        background: #364F6B;
+        border-radius: 4px;
+    }
+
+    /* Handle on hover */
+    .list-of-tasks::-webkit-scrollbar-thumb:hover {
+        background: #254467;
+    }
+    /* Track */
+    .list-of-tasks::-webkit-scrollbar-track {
+        background: #F5F5F5;
+        border-radius: 4px;
+    }
+
+.item {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+    margin: 2px 5px 2px 2px;
+    border-width: 0px;
+    border-radius: 5px;
+    padding: 0.6rem 1rem 0;
+    background-color: #364F6B;;
+    color: #F5F5F5;
+}
+.item:hover {
+    background-color: #254467;
+    box-shadow: 0 1px 4px 0 #364F6B;
+}
+    /*--CHECKBOX------------*/
+    .checkbox{ 
+        /*remove the default checkbox*/
+        appearance: none;
+        /*edit the new one-----------*/
+        position: relative;
+        bottom: 2px;
+        margin-right: 8px;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: #254467;
+        border: 2px solid #F5F5F5;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .checkbox:hover {
+        background-color: #3FC1C9;
+    }
+    .checkbox:checked{
+        background-color: #3FC1C9;
+    }
+    .checkbox:checked::after{
+        font-family: "Font Awesome 6 Free";
+        content: "\f00c";
+        font-weight: 900;
+        color: #F5F5F5;
+    }
+    label{
+        margin-right: auto;
+        justify-self: flex-start;
+    }
+    .task-done{
+        text-decoration: line-through;
+    }
+    /*--REMOVE BUTTON----*/
+    .icon-pos2 {
+        position: relative;
+        bottom: 2px;
+        padding: 1px 0 6px 0;   
+    }
+    .remove {
+        background-color: #00000000;
+        border: none;
+        color: #F5F5F5;
+        
+    }
+    .remove:hover {
+        cursor: pointer;
+        color:#FC5185;
+    }
+
+/*--ADD TASK---------------------*/
+.add-task{
+    color: #364F6B;
+    font-family: 'Handlee', cursive;
+    font-weight: 700;
+    background-color:#F5F5F5;
+    margin: 3px;
+    padding: 8px 16px;
+    border-width: 0;
+    border-radius: 5px;
+    border-color: #00000000;
+    width:93%;
+}
+    input::placeholder {
+        color: #364F6B70;
+    }
+    input:focus {
+        outline: none;
+        box-shadow: 0 2px 10px 0 #364F6B;
+    }

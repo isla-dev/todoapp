@@ -1,0 +1,97 @@
+
+<%- include("partials/header.ejs") %>
+
+<!-- NavBar --------------------------------------->
+<%- include("partials/listbar.ejs") %>
+<script>
+    document.querySelectorAll(".list")[1].classList.add("selected-list");
+    document.querySelectorAll(".nav-item")[0].classList.add("selected-nav-item");
+</script>
+
+    <!--//////// TASKS LAYOUT \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+    <div class="tasks"> 
+
+        <!-- Date --------------------------------------->
+        <!--the values filled by action.js-->
+        <div class="tasks-header">
+            <h1 class="today"><!--day--></h1>
+            <h5 class="date"><!--dd mm year--></h5>
+        </div>
+        
+        <!-- TASKS --------------------------------------->
+        <div class="list-of-tasks">
+        
+        
+            <div class="picture">
+                <img src="pictures/this-week-blue.png" alt="">
+                <h4 class="advice">set your goals for this week</h4>
+            </div>
+
+            <!-- Show, remove the list items -->
+            <% if(locals.task) {
+                
+                if (task.length > 0 ) {%>
+                    <script type="text/javascript">   
+                        document.querySelector(".picture").classList.add("invisible");
+                    </script>
+                <%}
+                else {%>
+                    <script>
+                        window.localStorage.clear();
+                    </script>
+                <%}
+                for (var i = 0; i< task.length; i++) {%>
+                    <div class="item" >
+                        <input class="checkbox" type="checkbox" name="<%=i%>">
+                        <label id="item<%=i%>"><%= task[i] %></label>
+                        <script type="text/javascript">
+                            //add line after refresh the page
+                            if(window.localStorage.getItem("<%=i%>")){
+                                document.getElementById("item<%=i%>").classList.add("task-done");
+                                document.querySelectorAll(".checkbox")["<%=i%>"].checked = true;
+                            }
+                            //save the done task
+                            document.querySelectorAll(".checkbox")["<%=i%>"].addEventListener("change",function(){
+                                //toggle the checkbox
+                                if(this.checked) { 
+                                    document.getElementById("item<%=i%>").classList.add("task-done");
+                                    window.localStorage.setItem("<%=i%>","<%=i%>");
+                                }
+                                else {
+                                    document.getElementById("item<%=i%>").classList.remove("task-done");
+                                    localStorage.removeItem("<%=i%>");
+                                }
+
+                            });
+                        </script>
+                        <form action="/this-week-remove" method="post">
+                            <button class="remove" type="submit" name="remove" value="<%=i%>"><span class="material-symbols-outlined icon-pos2">delete</span></button>  
+                            <script>
+                                document.querySelectorAll("button")["<%=i%>"].addEventListener("click",function(){
+                                    //remove the item from local storage
+                                    localStorage.removeItem("<%=i%>");
+                                    //edit the value of other items, because the oreder changed                   
+                                    "<%for(var j = i; j<=task.length ; j++) {%>"
+                                        if(localStorage.getItem("<%=j+1%>")){
+                                            localStorage.removeItem("<%=j+1%>");
+                                            localStorage.setItem("<%=j%>","<%=j%>");
+                                        }
+                                    "<%}%>"
+                                });
+                            </script>
+                        </form>
+                    </div>  
+                <%}
+            }%>
+        </div>
+
+        <!--add new task------------------------->
+        <form action="/this-week-add" method="post">
+            <input class="add-task" type="text" name="task" placeholder="add new task">
+        </form>
+        
+    </div>
+    
+    
+
+<%-include("partials/footer.ejs")%>

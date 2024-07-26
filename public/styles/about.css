@@ -1,0 +1,59 @@
+.about {
+    background-color: #F5F5F5;
+    background-image: url("https://www.transparenttextures.com/patterns/blizzard.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    grid-column: span 2;
+    border-radius: 0px 20px 0px 20px;
+    overflow-x: hidden;
+}
+    .about::-webkit-scrollbar{
+        width: 10px;
+    }
+    /* Handle */
+    .about::-webkit-scrollbar-thumb {
+        background: #FC5185;
+        border-radius: 2px;
+    }
+
+    /* Handle on hover */
+    .about::-webkit-scrollbar-thumb:hover {
+        background: #a51d46;
+    }
+    /* Track */
+    .about::-webkit-scrollbar-track {
+        background: #F5F5F5;
+        border-radius: 4px;
+    }
+
+    
+.descreption{    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 0 40px;
+    color: #364F6B;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.to-do-app{
+    padding: 3rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    font-size: 2rem;
+
+}
+.to-do-pic{
+    margin: 0;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(1px 1px 2px #222);
+   
+}
+.to-do-text{
+    margin: 0;
+    color: #FC5185;
+    filter: drop-shadow(1px 1px 1px #222);
+}
